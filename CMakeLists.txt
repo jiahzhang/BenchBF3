@@ -43,7 +43,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-address-of-packed-member -Wno-neste
 add_definitions(-DDOCA_ALLOW_EXPERIMENTAL_API)
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(DOCA IMPORTED_TARGET doca)
+pkg_check_modules(DOCA IMPORTED_TARGET doca-dpa doca-common doca-rdma doca-pcc doca-dma doca-comm-channel)
 pkg_check_modules(LIBDPDK IMPORTED_TARGET libdpdk)
 pkg_check_modules(LIBFLEXIO IMPORTED_TARGET libflexio)
 
@@ -54,6 +54,7 @@ if (Protobuf_FOUND)
     #  message(STATUS "${Protobuf_INCLUDE_DIRS}")
     #  message(STATUS "${Protobuf_LITE_LIBRARIES}")
 endif ()
+
 
 if (DOCA_FOUND)
     message(STATUS "DOCA_LIB found")

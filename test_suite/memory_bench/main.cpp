@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
 
     auto runner = DOCA::bench_runner(FLAGS_thread);
 
-    runner.run(benchmark_memory_ronly_loop, static_cast<void *>(data));
+    runner.run(benchmark_memory_wonly_loop, static_cast<void *>(data));
 
     sleep(1);
     start_flag = true;
